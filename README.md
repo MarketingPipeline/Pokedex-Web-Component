@@ -1,7 +1,8 @@
 # Pokedex-Web-Component
 
+
 <div align="center">
-<a href="https://github.com/MarketingPipeline/Pokedex-Web-Component"> <img height="300px" src="https://user-images.githubusercontent.com/86180097/177226706-2948933e-d3fc-4940-9f62-fab83bea48fe.png"/> </a> 
+<a href="https://github.com/MarketingPipeline/Pokedex-Web-Component"> <img height="300px" src="https://user-images.githubusercontent.com/86180097/190952101-6852513c-f435-406c-9d54-b31cbd3c4e0c.png"/> </a> 
 </div>  
     
 <p align="center">
@@ -20,9 +21,12 @@
 
 
 A custom web element to easily show off your favorite Pokemon inside of a Pokedex! 
-
+ 
 
 ## Example and usage
+
+
+> Note: currently there is no error handling to take care of not found Pokemon names, if you would like to address a PR that fixes this. Feel free.
 
 You can view a live demo of the Pokedex web component in use [here.](https://marketingpipeline.github.io/Pokedex-Web-Component/demo)
 
@@ -32,12 +36,12 @@ You can view a live demo of the Pokedex web component in use [here.](https://mar
 <i>How to show a <b>Pokemon</b> inside of a <b>Pokedex</b></i>:
 
 ```html
-<poke-dex name="Charsizard"></pokedex>
+<poke-dex name="Pikachu"></pokedex>
 ```
 
-   include this [script](https://github.com/MarketingPipeline/Pokedex-Web-Component/blob/main/dist/1.0.0/pokemon-wc.js) in your HTML document.
+   include this [script](https://github.com/MarketingPipeline/Pokedex-Web-Component/blob/main/dist/1.0.0/pokemon-wc.min.js) in your HTML document.
          
-    <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Pokedex-Web-Component/dist/1.0.0/pokemon-wc.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Pokedex-Web-Component/dist/1.0.0/pokemon-wc.min.js" defer></script> 
 
 
 
