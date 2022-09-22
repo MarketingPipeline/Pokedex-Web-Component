@@ -25,9 +25,6 @@ A custom web element to easily show off your favorite Pokemon inside of a Pokede
 
 ## Example and usage
 
-
-> Note: currently there is no error handling to take care of not found Pokemon names, if you would like to address a PR that fixes this. Feel free.
-
 You can view a live demo of the Pokedex web component in use [here.](https://marketingpipeline.github.io/Pokedex-Web-Component/demo)
 
 
