@@ -5,10 +5,8 @@ class Pokedex extends HTMLElement {
     this.pokemonDetails = null;
 
     this.name = this.getAttribute("name");
-    if (!this.name){
-   /// need to add error handling
-    } else{ 
-    this.endpoint = `https://pokeapi.co/api/v2/pokemon/${this.name.toLowerCase()}`;
+    if (this.name){
+   this.endpoint = `https://pokeapi.co/api/v2/pokemon/${this.name.toLowerCase()}`;
     this.getDetails = this.getDetails.bind(this);
     }
     this.innerHTML = this.style +  `<div class="pokedex-wrapper">
@@ -135,6 +133,9 @@ class Pokedex extends HTMLElement {
   }
 
   get template() {
+    if (!this.name){
+  return this.style + this.cardError({message: "Name Attribute Missing"});
+    }
     let pokemon = this.pokemonDetails;
     if (!pokemon.name) {
       return this.style + this.cardError({message: "Pokemon Not Found"});
@@ -147,20 +148,21 @@ class Pokedex extends HTMLElement {
     return await   fetch(this.endpoint, { mode: "cors" })
     .then(response => response.json())
     .catch(error => {
+      
       console.log(error.message)
       if (error.message.includes("Unexpected token")){
-        return "Pokemon Not Found" // this really doesn't do anything right now - but triggers
+        return true
       }
     })
   }
 
   cardError({ message }) {
      this.pokemon_image.src = `https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3ce212da-22a2-4830-85cc-f5e5affc5cd6/dcxehfe-dd22d80d-4cff-49bf-be56-bb51f5ea0a78.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjZTIxMmRhLTIyYTItNDgzMC04NWNjLWY1ZTVhZmZjNWNkNlwvZGN4ZWhmZS1kZDIyZDgwZC00Y2ZmLTQ5YmYtYmU1Ni1iYjUxZjVlYTBhNzguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FPZzigXwn6ZWFixDogw4z5uQbIfnJSzyq8TDI9K_3o8`
-    this.pokemon_name.innerText = "Pokemon Not Found!"
+    this.pokemon_name.innerText = message
  return this.innerHTML;
   }
 
-  cardTemplate({name, id, owner, full_name, description }) {
+  cardTemplate({name, id}) {
     
     this.pokemon_image.src = `https://raw.githubusercontent.com/sashafirsov/pokeapi-sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
     this.pokemon_name.innerText = name
