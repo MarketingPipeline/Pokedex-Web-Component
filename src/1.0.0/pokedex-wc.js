@@ -166,8 +166,15 @@ class Pokedex extends HTMLElement {
   }
 
   cardTemplate({name, id}) {
-    
-    this.pokemon_image.src = `https://raw.githubusercontent.com/sashafirsov/pokeapi-sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
+    /// there isn't older - cooler looking animated sprites for newer pokemon... 
+    if (id > 649) {
+       this.pokemon_image.src =                
+     `https://projectpokemon.org/images/normal-sprite/${name}.gif`
+    } else{
+      /// Cool old looking animated sprites! 
+       this.pokemon_image.src = `https://raw.githubusercontent.com/sashafirsov/pokeapi-sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${id}.gif`
+    }
+   
     this.pokemon_name.innerText = name
  return this.innerHTML
    
