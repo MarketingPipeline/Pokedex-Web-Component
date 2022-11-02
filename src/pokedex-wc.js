@@ -1,3 +1,5 @@
+
+// PokeDex Web Component -  Version 1.0.0
 class Pokedex extends HTMLElement {
   constructor() {
     super();
