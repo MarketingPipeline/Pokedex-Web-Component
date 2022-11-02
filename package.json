@@ -1,0 +1,12 @@
+{
+  "name": "@MarketingPipeline/Pokedex-Web-Component",
+  "description": "A web component to show off your favorite Pokemon inside of a Pokedex",
+  "version": "1.0.0",
+  "homepage": "https://github.com/MarketingPipeline/Pokedex-Web-Component",
+  "license": "GPL-3.0",
+  "main": "./dist/pokedex-wc.min.js",
+  "author": {
+    "name": "MarketingPipeline",
+    "url": "https://github.com/MarketingPipeline"
+  }
+}
