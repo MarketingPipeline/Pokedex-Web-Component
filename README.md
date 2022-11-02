@@ -36,9 +36,9 @@ You can view a live demo of the Pokedex web component in use [here.](https://mar
 <poke-dex name="Pikachu"></pokedex>
 ```
 
-   include this [script](https://github.com/MarketingPipeline/Pokedex-Web-Component/blob/main/dist/1.0.0/pokedex-wc.min.js) in your HTML document.
+   include this [script](https://github.com/MarketingPipeline/Pokedex-Web-Component/blob/main/dist/pokedex-wc.min.js) in your HTML document.
          
-    <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Pokedex-Web-Component/dist/1.0.0/pokedex-wc.min.js" defer></script> 
+    <script src="https://cdn.jsdelivr.net/gh/MarketingPipeline/Pokedex-Web-Component/dist/pokedex-wc.min.js" defer></script> 
 
 
 
